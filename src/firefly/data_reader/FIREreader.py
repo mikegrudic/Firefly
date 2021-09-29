@@ -445,9 +445,9 @@ class STARFORGEreader(FIREreader):
             ptypes=[0,5], 
             UInames=['Gas','Stars'],
             decimation_factors=[decimation_factor,1],
-            fields=['AgeGyr','Temperature','Velocities','GCRadius'],
-            magFlags=[False,False,False,False], 
-            logFlags=[False,True,False,False], 
+            fields=['Temperature','Velocities'],
+            magFlags=[False,False,], 
+            logFlags=[True,False,], 
             JSON_prefix='Data',
             JSONdir=JSONdir,
             **kwargs)
@@ -459,7 +459,7 @@ class STARFORGEreader(FIREreader):
         self.settings['color']['Stars'] = [0,0,1,1]
 
         self.settings['sizeMult']['Gas'] = 1
-        self.settings['sizeMult']['Stars'] = 1
+        self.settings['sizeMult']['Stars'] = 4
 
         self.settings['camera'] = [0,0,-15]
 
