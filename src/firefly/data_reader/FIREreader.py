@@ -444,7 +444,7 @@ class STARFORGEreader(FIREreader):
             snapnum,
             ptypes=[0,5], 
             UInames=['Gas','Stars'],
-            decimation_factors=[decimation_factor,decimation_factor],
+            decimation_factors=[decimation_factor,1],
             fields=['AgeGyr','Temperature','Velocities','GCRadius'],
             magFlags=[False,False,False,False], 
             logFlags=[False,True,False,False], 
