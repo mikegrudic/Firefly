@@ -384,7 +384,7 @@ class STARFORGEreader(FIREreader):
         decimation_factor=10,
         JSONdir=None,
         write_jsons_to_disk=True,
-        com_offset=False, 
+        com_offset=True, 
         **kwargs):
         """ A wrapper to :class:`firefly.data_reader.FIREreader` that will open 
             `STARFORGE collaboration <http://starforge.space>`_ formatted data with minimal interaction from the user 
@@ -445,9 +445,9 @@ class STARFORGEreader(FIREreader):
             ptypes=[0,5], 
             UInames=['Gas','Stars'],
             decimation_factors=[decimation_factor,1],
-            fields=['Temperature','Velocities'],
-            magFlags=[False,False,], 
-            logFlags=[True,False,], 
+            fields=['Temperature','Velocities','BH_Mass'],
+            magFlags=[False,False,False], 
+            logFlags=[True,False,True], 
             JSON_prefix='Data',
             JSONdir=JSONdir,
             **kwargs)
@@ -456,10 +456,10 @@ class STARFORGEreader(FIREreader):
         self.loadData(com_offset=com_offset)
 
         self.settings['color']['Gas'] = [1,0,0,1]
-        self.settings['color']['Stars'] = [0,0,1,1]
+        self.settings['color']['Stars'] = [1,1,0.5,1]
 
         self.settings['sizeMult']['Gas'] = 1
-        self.settings['sizeMult']['Stars'] = 4
+        self.settings['sizeMult']['Stars'] = 3
 
         self.settings['camera'] = [0,0,-15]
 
